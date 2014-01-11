@@ -39,7 +39,8 @@ BuildRequires:    maven-install-plugin
 Jansi is a small java library that allows you to use ANSI escape sequences
 in your Java console applications. It implements ANSI support on platforms
 which don't support it like Windows and provides graceful degradation for
-when output is being sent to output devices which cannot support ANSI sequences. 
+when output is being sent to output devices which cannot support ANSI
+sequences. 
 
 %package javadoc
 Summary:          Javadocs for %{name}
