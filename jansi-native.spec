@@ -1,4 +1,4 @@
-%_javapackages_macros
+%{?_javapackages_macros:%_javapackages_macros}
 %global bits 32
 %global debug_package %{nil}
 
@@ -8,7 +8,7 @@
 
 Name:             jansi-native
 Version:          1.5
-Release:          1.0%{?dist}
+Release:          1.1%{?dist}
 Summary:          Jansi Native implements the JNI Libraries used by the Jansi project
 
 License:          ASL 2.0
