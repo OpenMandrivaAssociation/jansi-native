@@ -8,32 +8,23 @@
 
 Name:             jansi-native
 Version:          1.5
-Release:          1.1%{?dist}
+Release:          8.1
 Summary:          Jansi Native implements the JNI Libraries used by the Jansi project
-
+Group:		  Development/Java
 License:          ASL 2.0
 URL:              http://jansi.fusesource.org/
 Source0:          https://github.com/fusesource/jansi-native/archive/jansi-native-1.5.tar.gz
 
-BuildRequires:    maven-local
-BuildRequires:    maven-compiler-plugin
-BuildRequires:    maven-javadoc-plugin
-BuildRequires:    maven-surefire-plugin
-BuildRequires:    maven-surefire-report-plugin
-BuildRequires:    maven-project-info-reports-plugin
-BuildRequires:    maven-clean-plugin
-BuildRequires:    maven-plugin-bundle
-BuildRequires:    maven-plugin-jxr
-BuildRequires:    junit4
-BuildRequires:    hawtjni
-BuildRequires:    autoconf
-BuildRequires:    automake
-BuildRequires:    libtool
-BuildRequires:    make
-BuildRequires:    fusesource-pom
-BuildRequires:    maven-surefire-provider-junit4
-BuildRequires:    maven-hawtjni-plugin
-BuildRequires:    maven-install-plugin
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: maven-local
+BuildRequires: mvn(junit:junit)
+BuildRequires: mvn(org.apache.felix:maven-bundle-plugin)
+BuildRequires: mvn(org.apache.maven.plugins:maven-clean-plugin)
+BuildRequires: mvn(org.fusesource:fusesource-pom:pom:)
+BuildRequires: mvn(org.fusesource.hawtjni:hawtjni-runtime) >= 1.9
+BuildRequires: mvn(org.fusesource.hawtjni:maven-hawtjni-plugin) >= 1.9
 
 %description
 Jansi is a small java library that allows you to use ANSI escape sequences
@@ -50,6 +41,7 @@ This package contains the API documentation for %{name}.
 
 %prep
 %setup -q -n jansi-native-jansi-native-%{version}
+%mvn_package :::linux%{bits}:
 
 %build
 %mvn_build
@@ -58,7 +50,7 @@ This package contains the API documentation for %{name}.
 %mvn_install
 
 %files -f .mfiles
-%dir %{_javadir}/%{name}
+%dir %{_jnidir}/%{name}
 %doc readme.md license.txt changelog.md
 
 %files javadoc -f .mfiles-javadoc
