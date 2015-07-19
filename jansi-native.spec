@@ -8,7 +8,7 @@
 
 Name:             jansi-native
 Version:          1.5
-Release:          8.1
+Release:          8.2
 Summary:          Jansi Native implements the JNI Libraries used by the Jansi project
 Group:		  Development/Java
 License:          ASL 2.0
