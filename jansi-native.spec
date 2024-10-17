@@ -12,7 +12,7 @@ Release:          8.4
 Summary:          Jansi Native implements the JNI Libraries used by the Jansi project
 Group:		  Development/Java
 License:          ASL 2.0
-URL:              http://jansi.fusesource.org/
+URL:              https://jansi.fusesource.org/
 Source0:          https://github.com/fusesource/jansi-native/archive/jansi-native-1.5.tar.gz
 
 BuildRequires: autoconf
